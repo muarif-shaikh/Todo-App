@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Update{% endblock title %}
+{% block body %}
+
+<div class="container my-3">
+    <h2>Update Todo</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="todo_title" class="form-label">Todo Title</label>
+            <input type="text" class="form-control" name="todo_title" id="todo_title" value="{{todo.todo_title}}" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="todo_desc" class="form-label">Todo Description</label>
+            <input type="text" class="form-control" name="todo_desc" id="todo_desc" value="{{todo.todo_desc}}">
+        </div>
+        <button type="submit" class="btn btn-dark">Update</button>
+    </form>
+</div>
+
+{% endblock body %}
